@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music player</title>
+    <script src="https://kit.fontawesome.com/21863cd173.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                  <div class="top-bar">
+                    <i class="fa-solid fa-angle-left"></i>
+                  </div>
+                  <div class="top-bar">
+                    <i class="fa-solid fa-bars"></i>
+                  </div>
+            </nav>
+            <div class="tech">MEKUS TECHNOLOGY</div>
+            <img  src="IMAGE BANK\okemmuo cover.jpg " alt="">
+            <h1>olowogbogboro</h1>
+            <p>dunsin ft ebenezer jerry</p>
+
+          <audio  id="song">
+            <source src="MUSIC BANK\Chioma_Jesus_Ft_Mercy_Chinwo_-_Okemmuo_(Naijay.com).mp3" type="audio/mpeg">
+            
+          </audio>
+          
+          <input type="range" value="0" id="progress">
+          <div class="audio-timer">
+          <div class="current-time">00:00</div>
+          <div class="duration">00:00</div>
+        </div>
+
+          <div class="controls">
+            <div><i class="fa-solid fa-backward" id="backward"></i></div>
+            <div><i class="fa-solid fa-play" id="play"></i></div>
+            <div><i class="fa-solid fa-forward" id="forward"></i></div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

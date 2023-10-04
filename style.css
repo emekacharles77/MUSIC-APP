@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' sans-serif;
+}
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    background: rgb(77, 77, 196);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.music-player{
+    width: 400px;
+    padding: 25px 35px;
+    background-color: rgb(166, 141, 141);
+    text-align: center;
+    user-select: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .top-bar{
+    font-size: 150%;
+    border-radius: 50%;
+    background-color: #fff;
+    color: rgb(74, 74, 181);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 10px rgb(77, 63, 63);
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.tech{
+    font-size: 150%;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 15px 60px rgb(60, 60, 142);
+    animation: rotate 10s linear infinite;
+    animation-play-state: paused;
+
+}
+
+
+@keyframes rotate {
+    0%{
+     transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.music-player h1{
+    font-size: 30px;
+    font-weight: 400;
+    color: whitesmoke;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.music-player p{
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+#progress{
+    -webkit-appearance: none;
+    width: 100%;
+    cursor: pointer;
+    margin: 40px 0px 20px 0px;
+    height: 6px;
+    border-radius: 4px;
+    background: whitesmoke;
+    overflow: hidden;
+}
+
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 1px;
+    /* height: 30px; */
+    /* border-radius: 50%; */
+    /* border: 8px solid white; */
+    /* background: green; */
+    box-shadow: -250px 0 0 250px rgb(60, 60, 142);
+}
+
+.audio-timer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: whitesmoke;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls div{
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: blueviolet;
+    box-shadow:  0 10px 15px rgb(60, 60, 142);
+}
+
+ .controls div:nth-child(2){
+    transform: scale(1.5);
+    background: rgb(60, 60, 142);
+    color: white;
+} 
