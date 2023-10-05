@@ -1,7 +1,7 @@
 const progress=document.getElementById('progress')
 const song=document.getElementById('song')
 const play=document.getElementById('play')
-const playicon=document.querySelector('.fa-play')
+// const playicon=document.querySelector('.fa-play')
 const backward=document.getElementById('backward')
 const forward=document.getElementById('forward')
 const title=document.querySelector('h1')
@@ -72,17 +72,32 @@ let audio=null,
           forward.addEventListener("click", ()=>{
             if(currentTrackIndex < tracks.length-1){
                 currentTrackIndex++;
-                play.classList.add("fa-play")
+                play.classList.remove("fa-play")
+                play.classList.add("fa-pause")
                 image.style.animationPlayState="paused";
+                // audio.play()
             }else{
                 currentTrackIndex=0;
-                play.classList.add("fa-play")
+                play.classList.add("fa-pause")
+
             }
+
             currentTrack=tracks[currentTrackIndex]
-            image.src=currentTrack.cover,
-            audio.src=currentTrack.source,
-            title.innerText=currentTrack.name;
-            artist.innerText=currentTrack.artist;
+                image.src=currentTrack.cover,
+                audio.src=currentTrack.source,
+                title.innerText=currentTrack.name;
+                artist.innerText=currentTrack.artist;
+           
+            setTimeout(()=>{
+                if(currentTrackIndex){
+                   audio.play()
+                }
+            }, 300)
+
+            if(currentTrackIndex===0){
+                play.classList.add("fa-play")
+                play.classList.remove("fa-pause")
+            }
               
         })
 
@@ -90,17 +105,32 @@ let audio=null,
           backward.addEventListener("click", ()=>{
             if(currentTrackIndex > 0){
                 currentTrackIndex--;
-                play.classList.add("fa-play")
+                play.classList.remove("fa-play")
+                play.classList.add("fa-pause")
+                
                 image.style.animationPlayState="paused";
             }else{
                 currentTrackIndex= tracks.length-1;
-                play.classList.add("fa-play")
+                play.classList.remove("fa-play")
+                play.classList.add("fa-pause")
+
             }
             currentTrack=tracks[currentTrackIndex]
             image.src=currentTrack.cover,
             audio.src=currentTrack.source,
             title.innerText=currentTrack.name;
             artist.innerText=currentTrack.artist;
+
+            setTimeout(()=>{
+                if(currentTrackIndex){
+                   audio.play()
+                }
+            }, 300)
+
+            if(currentTrackIndex===0){
+                play.classList.add("fa-play")
+                play.classList.remove("fa-pause")
+            }
             
         })
        
@@ -126,8 +156,6 @@ let audio=null,
         }
         playpause()
         })
-
-
         
 
 
@@ -138,11 +166,19 @@ let audio=null,
                 let dursec=Math.floor(audio.duration-durmin*60);
                 let curmin=Math.floor(audio.currentTime/60);
                 let cursec=Math.floor(audio.currentTime-curmin*60);
-    
-                if(durmin < 10) durmin="0" + durmin;
-                if(dursec < 10) dursec="0" + dursec;
-                if(curmin < 10) curmin="0" + curmin;
-                if(cursec < 10) cursec="0" + cursec;
+                
+                if(durmin < 10){ 
+                    durmin="0" + durmin;
+                }
+                if(dursec < 10) {
+                    dursec="0" + dursec;
+                }
+                if(curmin < 10) {
+                    curmin="0" + curmin;
+                }
+                if(cursec < 10) {
+                    cursec="0" + cursec;
+                }
     
                 duration=durmin + ":" + dursec;
                 currentTime=curmin + ":" + cursec;
